@@ -63,7 +63,10 @@ def create_organization():
 
 @organization_routes.route('/<string:organization_id>', methods=['GET'])
 def get_organization(organization_id):
-    organization_obj_id = ObjectId(organization_id)
+    try:
+        organization_obj_id = ObjectId(organization_id)
+    except Exception:
+        return jsonify({'message': 'Invalid organization ID'}), 400
     try:
         token = request.headers.get('Authorization').split()[1]
     except AttributeError:
@@ -86,7 +89,10 @@ def get_organization(organization_id):
 
 @organization_routes.route('/<string:organization_id>', methods=['PUT'])
 def update_organization(organization_id):
-    organization_obj_id = ObjectId(organization_id)
+    try:
+        organization_obj_id = ObjectId(organization_id)
+    except Exception:
+        return jsonify({'message': 'Invalid organization ID'}), 400
     try:
         token = request.headers.get('Authorization').split()[1]
     except AttributeError:
@@ -127,7 +133,10 @@ def update_organization(organization_id):
 
 @organization_routes.route('/<string:organization_id>', methods=['DELETE'])
 def delete_organization(organization_id):
-    organization_obj_id = ObjectId(organization_id)
+    try:
+        organization_obj_id = ObjectId(organization_id)
+    except Exception:
+        return jsonify({'message': 'Invalid organization ID'}), 400
     try:
         token = request.headers.get('Authorization').split()[1]
     except AttributeError:
@@ -154,7 +163,10 @@ def delete_organization(organization_id):
 
 @organization_routes.route('/<string:organization_id>/invite', methods=['POST'])
 def add_member(organization_id):
-    organization_obj_id = ObjectId(organization_id)
+    try:
+        organization_obj_id = ObjectId(organization_id)
+    except Exception:
+        return jsonify({'message': 'Invalid organization ID'}), 400
     try:
         token = request.headers.get('Authorization').split()[1]
     except AttributeError:
