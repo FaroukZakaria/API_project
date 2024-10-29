@@ -21,13 +21,8 @@ This project is an API built using Flask and Python. It provides functionalities
 ## Technologies Used
 
 - **Backend**: Flask, Python
+- **Database**: MongoDB
 - **Authentication**: JWT tokens
-
-## Future Enhancements
-
-- **Frontend**: Integration of a frontend interface
-- **Caching**: Implementation of Redis for caching
-- **Containerization**: Dockerize the entire application
 
 ## Getting Started
 
