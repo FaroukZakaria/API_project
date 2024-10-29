@@ -2,6 +2,7 @@ from project.db import *
 from flask import request, jsonify, Blueprint
 from project.controllers.user_controller import *
 from project.controllers.organization_controller import *
+from project.controllers.token_controller import *
 from project.models.organization_model import Organization
 from flask_jwt_extended import decode_token
 
